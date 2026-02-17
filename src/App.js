@@ -167,7 +167,7 @@ function Footer({ setPage }) {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>© 2025 Take Me Places Pvt Ltd. All rights reserved.</p>
+        <p>© 2025 Sree Sathyan. All rights reserved.</p>
         <p>Made with 🌿 for wanderers everywhere</p>
       </div>
     </footer>
