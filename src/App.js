@@ -494,7 +494,7 @@ function ContactPage() {
   // ║  const FORMSPREE_URL = "https://formspree.io/f/xwkgpqle";               ║
   // ╚══════════════════════════════════════════════════════════════════════════╝
   
-  const FORMSPREE_URL = "https://formspree.io/f/YOUR_FORM_ID";  // ← CHANGE THIS!
+  const FORMSPREE_URL = "https://formspree.io/forms";  // ← CHANGE THIS!
 
   const handleSubmit = async (e) => {
     e.preventDefault();
