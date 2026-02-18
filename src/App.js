@@ -76,6 +76,71 @@ const STYLES = `
   ::-webkit-scrollbar { width:6px; }
   ::-webkit-scrollbar-track { background:var(--foam); }
   ::-webkit-scrollbar-thumb { background:var(--mint); border-radius:10px; }
+/* Floating WhatsApp Button */
+.whatsapp-float {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background: #25D366;
+  color: #FFF;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 38px;
+  box-shadow: 2px 5px 15px rgba(0,0,0,0.25);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 8px 25px rgba(37,213,102,0.4);
+}
+
+.whatsapp-float i {
+  font-size: 40px;
+}
+
+/* Optional pulse ring effect */
+.whatsapp-float::after {
+  content: '';
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  background: rgba(37,213,102,0.25);
+  border-radius: 50%;
+  top: -10px;
+  left: -10px;
+  animation: pulse 2.2s infinite;
+  z-index: -1;
+}
+
+@keyframes pulse {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(1.5); opacity: 0; }
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .whatsapp-float {
+    width: 54px;
+    height: 54px;
+    bottom: 20px;
+    right: 20px;
+    font-size: 32px;
+  }
+  .whatsapp-float::after {
+    width: 70px;
+    height: 70px;
+    top: -8px;
+    left: -8px;
+  }
+}
 `;
 
 // ─── DATA ─────────────────────────────────────────────────────────────────────
@@ -662,11 +727,28 @@ export default function App() {
 
   return (
     <>
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
       <style>{STYLES}</style>
       <div style={{ minHeight:"100vh", display:"flex", flexDirection:"column" }}>
         <Navbar page={page} setPage={setPage} />
         <main style={{ flex:1 }}>{renderPage()}</main>
         <Footer setPage={setPage} />
+  <a
+  href="https://wa.me/9606252699?text=Hi there! Welcome to Take Me Places 🌿...What destination are you dreaming of?"
+  className="whatsapp-float"
+  target="_blank"
+  rel="noopener noreferrer"
+  title="Chat with us on WhatsApp"
+  aria-label="Contact us on WhatsApp"
+>
+  <i className="fab fa-whatsapp"></i>
+</a>
       </div>
     </>
   );
