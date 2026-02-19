@@ -730,7 +730,7 @@ function LoginPage({ setPage }) {
   // ║  const FORMSPREE_LOGIN = "https://formspree.io/f/mblrabcd";             ║
   // ╚══════════════════════════════════════════════════════════════════════════╝
   
-  const FORMSPREE_LOGIN = "https://formspree.io/f/YOUR_LOGIN_FORM_ID";  // ← CHANGE THIS!
+  const FORMSPREE_LOGIN = "https://formspree.io/f/xgolzqep";  // ← CHANGE THIS!
 
   const handleSubmit = async (e) => {
     e.preventDefault();
